@@ -39,7 +39,12 @@ import { SixthComponent } from './components/sixth/sixth.component';
 import { SeventhComponent } from './components/seventh/seventh.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PrintComponent } from './components/print/print.component';
-
+import { EighthComponent } from './components/eighth/eighth.component';
+import { NinthComponent } from './components/ninth/ninth.component';
+import { TenthComponent } from './components/tenth/tenth.component';
+import { EleventhComponent } from './components/eleventh/eleventh.component';
+import { TwelthComponent } from './components/twelth/twelth.component';
+import { ThirteenthComponent } from './components/thirteenth/thirteenth.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +57,12 @@ import { PrintComponent } from './components/print/print.component';
     SixthComponent,
     SeventhComponent,
     PrintComponent,
+    EighthComponent,
+    NinthComponent,
+    TenthComponent,
+    EleventhComponent,
+    TwelthComponent,
+    ThirteenthComponent
   ],
   imports: [
     HttpClientModule,
@@ -65,6 +76,3 @@ import { PrintComponent } from './components/print/print.component';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
-
-
