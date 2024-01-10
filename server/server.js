@@ -14,7 +14,8 @@ app.use(bodyParser.json());
 //   useUnifiedTopology: true
 // });
 
-mongoose.connect('mongodb+srv://Sanjana:sanjana-123@cluster0.ch9bmxf.mongodb.net/medicalhistories/formdatas', {
+// mongoose.connect('mongodb+srv://Sanjana:sanjana-123@cluster0.ch9bmxf.mongodb.net/medicalhistories/formdatas', {
+mongoose.connect('mongodb://localhost:27017/khushi', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -363,8 +364,230 @@ const formDataSchema = new mongoose.Schema({
     past : String,
     psyc : String,
     with : String,
-    tre : String
+    tre : String,
 
+    // #############################################################################################
+    detail1_21: {
+      name_21: String,
+      relation_21: String,
+      age_21: Number,
+      income_21: Number,
+      education_21: String,
+      intoxicants_21: String
+    },
+    detail2_21: {
+      name_21: String,
+      relation_21: String,
+      age_21: Number,
+      income_21: Number,
+      education_21: String,
+      intoxicants_21: String
+    },
+    detail3_21: {
+      name_21: String,
+      relation_21: String,
+      age_21: Number,
+      income_21: Number,
+      education_21: String,
+      intoxicants_21: String
+    },
+    detail4_21: {
+      name_21: String,
+      relation_21: String,
+      age_21: Number,
+      income_21: Number,
+      education_21: String,
+      intoxicants_21: String
+    },
+    detail5_21: {
+      name_21: String,
+      relation_21: String,
+      age_21: Number,
+      income_21: Number,
+      education_21: String,
+      intoxicants_21: String
+    },
+    detail6_21: {
+      name_21: String,
+      relation_21: String,
+      age_21: Number,
+      income_21: Number,
+      education_21: String,
+      intoxicants_21: String
+    },
+    detail7_21: {
+      name_21: String,
+      relation_21: String,
+      age_21: Number,
+      income_21: Number,
+      education_21: String,
+      intoxicants_21: String
+    },
+    detail8_21: {
+      name_21: String,
+      relation_21: String,
+      age_21: Number,
+      income_21: Number,
+      education_21: String,
+      intoxicants_21: String
+    },
+    detail9_21: {
+      name_21: String,
+      relation_21: String,
+      age_21: Number,
+      income_21: Number,
+      education_21: String,
+      intoxicants_21: String
+    },
+    detail10_21: {
+      name_21: String,
+      relation_21: String,
+      age_21: Number,
+      income_21: Number,
+      education_21: String,
+      intoxicants_21: String
+    },
+    mother_death_reason: String,
+    father_death_reason: String,
+    father_death_age: Number,
+    mother_death_age: Number,
+    mtongue_21: String,
+    knownLang: String,
+    denial_type: String,
+    causefactor_22:String,
+    tolerence_22:String,
+    blackout_22:String,
+    childhood_22:String,
+    exp15_1:String,
+    exp15_2:String,
+    exp15_3:String,
+    exp15_4:String,
+    exp15_5:String,
+    exp15_6:String,
+    exp15_7:String,
+    exp15_8:String,
+  
+    years_23:Number,
+    prob15_1:String,
+    prob15_2:String,
+    prob15_3:String,
+    prob15_4:String,
+    prob15_5:String,
+    prob15_6:String,
+    prob15_7:String,
+    prob15_8:String,
+  
+    pastAch_1:String,
+    pastAch_2:String,
+    name_23:String,
+    age_23:Number,
+    religion_23:String,
+    education_23:String,
+    occupation_23:String,
+    income_23:String,
+    myears_23:Number,
+    marriageType:String,
+  
+    acceptedByFamily_24:String,
+    previousMarriages_24:String,
+    separatedDueToAddiction_24:String,
+    suspiciousOfWife_24:String,
+    familyViolence_24:String,
+    verbalabuse_24:String,
+    neighbourviolence_24:String,
+    articlebreak_24:String,
+    maleChildrenCount:Number,
+    femaleChildrenCount:Number,
+    
+  health1_24: {
+    pschoice_24:String,
+    psrelation_24:String,
+    wcchoice_24:String,
+    wcrelation_24:String
+  },
+  health2_24: {
+    pschoice_24:String,
+    psrelation_24:String,
+    wcchoice_24:String,
+    wcrelation_24:String
+  },
+  health3_24: {
+    pschoice_24:String,
+    psrelation_24:String,
+    wcchoice_24:String,
+    wcrelation_24:String
+  },
+  health4_24: {
+    pschoice_24:String,
+    psrelation_24:String,
+    wcchoice_24:String,
+    wcrelation_24:String
+  },
+  health5_24: {
+    pschoice_24:String,
+    psrelation_24:String,
+    wcchoice_24:String,
+    wcrelation_24:String
+  },
+  health6_24: {
+    pschoice_24:String,
+    psrelation_24:String,
+    wcchoice_24:String,
+    wcrelation_24:String
+  },
+  relation1_25: {
+    parent_25:String,
+    sibling_25:String,
+    spouse_25:String,
+    child_25:String
+  },
+  relation2_25: {
+    parent_25:String,
+    sibling_25:String,
+    spouse_25:String,
+    child_25:String
+  },
+  relation3_25: {
+    parent_25:String,
+    sibling_25:String,
+    spouse_25:String,
+    child_25:String
+  },
+  relation4_25: {
+    parent_25:String,
+    sibling_25:String,
+    spouse_25:String,
+    child_25:String
+  },
+  relation5_25: {
+    parent_25:String,
+    sibling_25:String,
+    spouse_25:String,
+    child_25:String
+  },
+  relation6_25: {
+    parent_25:String,
+    sibling_25:String,
+    spouse_25:String,
+    child_25:String
+  },
+  damagetype_25:String,
+  extramarital_25:String,
+  age_25:Number,
+  sustrel_25:String,
+  years_25:Number,
+  
+  livarr_26:String,
+  child_26:String,
+  highrisk_26:String,
+  sx_26:String,
+  q24_26:String,
+  hivtest_26:String,
+  prob26_1:String,
+  prob26_2:String,
+  prob26_3:String,
+  prob26_4:String,
+  prob26_5:String
 });
 
 const FormDataModel = mongoose.model('formData', formDataSchema);

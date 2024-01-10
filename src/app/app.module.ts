@@ -43,8 +43,14 @@ import { EighthComponent } from './components/eighth/eighth.component';
 import { NinthComponent } from './components/ninth/ninth.component';
 import { TenthComponent } from './components/tenth/tenth.component';
 import { EleventhComponent } from './components/eleventh/eleventh.component';
-import { TwelthComponent } from './components/twelth/twelth.component';
+// import { TwelthComponent } from './components/twelth/twelth.component';
 import { ThirteenthComponent } from './components/thirteenth/thirteenth.component';
+import { Page21Component } from './components/page21/page21.component';
+import { Page22Component } from './components/page22/page22.component';
+import { Page23Component } from './components/page23/page23.component';
+import { Page24Component } from './components/page24/page24.component';
+import { Page25Component } from './components/page25/page25.component';
+import { Page26Component } from './components/page26/page26.component';
 
 @NgModule({
   declarations: [
@@ -61,8 +67,14 @@ import { ThirteenthComponent } from './components/thirteenth/thirteenth.componen
     NinthComponent,
     TenthComponent,
     EleventhComponent,
-    TwelthComponent,
-    ThirteenthComponent
+    // TwelthComponent,
+    ThirteenthComponent,
+    Page21Component,
+    Page22Component,
+    Page23Component,
+    Page24Component,
+    Page25Component,
+    Page26Component
   ],
   imports: [
     HttpClientModule,
