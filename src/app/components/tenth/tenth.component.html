@@ -1,0 +1,466 @@
+<!-- 
+<style>
+    body {
+            width: 100%;
+            font-size: 15px;
+            margin: 0; 
+            padding: 0;
+           overflow-x: hidden; 
+    }
+  
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      padding-left: 22px;
+      text-align: center;
+    }
+    .container {
+            border: double 6px rgb(66, 64, 64);
+             outline: solid 2px rgb(68, 64, 64);
+             margin: auto;
+             margin-top: 36px;
+             min-height: 60vh;
+             padding-left: 20px;
+             padding-right: 20px;
+              box-sizing: border-box; 
+        }
+    .form {
+      padding: 20px;
+      
+    }
+  
+    .form-row {
+      margin-bottom: 20px;
+      display: flex;
+      /* flex-direction: row; */
+      align-items: center;
+    }
+  
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+  
+    .form-row label {
+      width: 25%;
+      margin-right: 10px;
+    }
+  
+    .form-input {
+      width: 20%;
+      padding: 2px;
+      border: 1px solid #f2eded;
+      /* border: 1px solid #c4bcbc; */
+      outline:none;
+      border-radius: 5px;
+      margin-bottom: 1px;
+    }
+
+    .form-input1 {
+      width: 5%;
+      padding: 1px;
+      border: 1px solid #f2eded;
+      /* border: 1px solid #c4bcbc; */
+      outline:none;
+      border-radius: 5px;
+      margin-bottom: 1px;
+    }
+  
+    .form-textarea {
+      height: 100px;
+    }
+  
+    .form-submit {
+      margin-top: 20px; /* Adjusted margin-top */
+      margin-bottom: 20px; /* Added margin-bottom */
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+   
+   @media screen and (min-width:100%) {
+     body {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+} 
+  
+    .form-fields + .form-fields {
+      margin-left: 20px;
+    }
+
+    .side-heading {
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    #b1 a{
+            position: relative;
+            left: 48%;
+            text-decoration: none;
+            border: 2px double rgb(100, 97, 97);
+            border-radius: 3px;
+            padding-left: 9px;
+            padding-right: 9px;
+   }
+
+   #b1 #b2{
+        position: relative;
+            left: 48%;
+            text-decoration: none;
+            border: 2px double rgb(100, 97, 97);
+            border-radius: 3px;
+            padding-left: 9px;
+            padding-right: 9px;
+         } 
+
+  </style>
+  
+  <body>
+    <div class="container">
+      
+     
+  <form action="" [formGroup]="formData" (ngSubmit)="onSubmit()">
+
+  
+    <h1><b>PHYSICAL EXAMINATION ON THE DAY OF ADMISSION</b></h1>
+               <label>Name:</label>
+              <input type="text" name="addictname" id="name"   style="width: 10%" formControlName="addictname">&nbsp;
+                <label>Pulse Rate:</label>
+              <input type="text" name="pulse" id="pulse"   style="width: 10%" formControlName="pulse">&nbsp;
+
+              <label>Blood Pressure:</label>
+              <input type="text" name="bp" id="bp"   style="width: 10%" formControlName="bp">&nbsp;
+
+              <label>Temperature:</label>
+              <input type="text" name="tem" id="tem"   style="width: 10%" formControlName="tem">&nbsp;
+
+<label>weight:</label>
+              <input type="text" name="we" id="we"   style="width: 10%" formControlName="we">&nbsp;
+
+<h3>Which of the following symptoms are present during admissions:</h3>
+
+
+
+<label>Anemia</label><input type="checkbox" id="anemia" formControlName="anemia" value="yes"><br>
+<label>Lymph Nodes</label><input type="checkbox" id="fig" formControlName="fig"><br>
+<label>Glossitis</label><input type="checkbox" id="glo" formControlName="glo"><br>
+<label>Flushed face</label><input type="checkbox" id="flu" formControlName="flu"><br>
+<label>Palmar erythema</label><input type="checkbox" id="pal" formControlName="pal"><br>
+<label>Pedal Edema</label><input type="checkbox" id="peda" formControlName="peda"><br>
+<label>Tremors</label><input type="checkbox" id="trem" formControlName="trem"><br>
+<label>Jaundice</label><input type="checkbox" id="janu" formControlName="janu"><br>
+<label>Loss of body hair</label><input type="checkbox" id="loss" formControlName="loss"><br>
+<label>Wasting of Muscles</label><input type="checkbox" id="waste" formControlName="waste"><br>
+<label>Abscess</label><input type="checkbox" id="absc" formControlName="absc"><br>
+<label>Hallucination</label><input type="checkbox" id="halluc" formControlName="halluc"><br>
+<label>Malnutrition</label><input type="checkbox" id="manu" formControlName="manu"><br>
+<label>Clubbing of nails</label><input type="checkbox" id="club" formControlName="club"><br>
+<label>Spider naevi</label><input type="checkbox" id="spd" formControlName="spd"><br>
+<label>Gynaecomastia</label><input type="checkbox" id="gynae" formControlName="gynae"><br>
+<label>Injection Marks</label><input type="checkbox" id="inj" formControlName="inj"><br>
+
+
+
+
+<h3>Record abnormailities, if any, on examination of the following:</h3>
+<label>System:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>No</label><br>
+<label>Respiratory system:</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio1" value="yes" id="radio1"  formControlName="radio1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="no1" value="no" id="no1"  formControlName="no1">
+<br>
+<label>Cardio vascular system</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio2" value="yes" id="radio2"  formControlName="radio2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="no2" value="no" id="no2"  formControlName="no2"><br>
+<label>Gastro Intestinal system</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio3" value="yes" id="radio3" formControlName="radio3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="no3" value="no" id="no3" formControlName="no3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<label>Nervous system</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio4" value="yes" id="radio4" formControlName="radio4" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="no4" value="no" id="no4" formControlName="no4" ><br>
+<h3>Any untoward incident occurred during treatment:</h3>&nbsp;<input type="text" name="inci" id="inci"   style="width: 30%" formControlName="inci">&nbsp;<label>Yes/No</label><br>
+<br>
+<label>If yes, describe the incident</label><br><br>
+<input type="text" name="box1" id="box1"   style="width: 100%" formControlName="box1">&nbsp;
+
+<h3>Action taken:</h3>
+<input type="text" name="box2" id="box2"   style="width: 100%" formControlName="box2">&nbsp;
+
+<h3>Impression of Counsellor:</h3><br>
+<input type="text" name="box5" id="box5"   style="width: 100%" formControlName="box5">&nbsp;<br>
+<label>Denial</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Mild</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Moderate</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Severe</label>
+<h3>Investigation:</h3>
+<input type="text" name="box3" id="box3"   style="width: 100%" formControlName="box3">&nbsp;
+
+<h3>Certificate issued (Details):</h3>
+<input type="text" name="box4" id="box4"   style="width: 100%" formControlName="box4">&nbsp;
+
+              <br><br>
+
+      <button type="submit" [disabled]="!formData.valid">Save</button>
+      <div id="b1">
+        <a routerLink="../ninth" style="text-decoration: none; color:black; background-color: rgb(255, 252, 252);display: inline-block; vertical-align: top;"><b>P</b></a> 
+         <b id="b2" style="text-decoration: none; color:black; background-color: rgb(243, 237, 237);display: inline-block; vertical-align: top;">10</b>
+        <a [routerLink]="['../eleventh', { addictName: formData.get('addictname')?.value }]" style="text-decoration: none; color:black; background-color: rgb(255, 252, 252); display: inline-block; vertical-align: top;"><b>N</b></a> 
+      </div>
+   
+  </form>
+    </div>
+    
+  </body>
+   -->
+
+   <style>
+    body {
+            width: 100%;
+            font-size: 15px;
+            margin: 0; 
+            padding: 0;
+           overflow-x: hidden; 
+    }
+  
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      padding-left: 22px;
+      text-align: center;
+    }
+    .container {
+            border: double 6px rgb(66, 64, 64);
+             outline: solid 2px rgb(68, 64, 64);
+             margin: auto;
+             margin-top: 36px;
+             min-height: 60vh;
+             padding-left: 20px;
+             padding-right: 20px;
+              box-sizing: border-box; 
+        }
+    .form {
+      padding: 20px;
+      
+    }
+  
+    .form-row {
+      margin-bottom: 20px;
+      display: flex;
+      /* flex-direction: row; */
+      align-items: center;
+    }
+  
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+  
+    .form-row label {
+      width: 25%;
+      margin-right: 10px;
+    }
+  
+    .form-input {
+      width: 20%;
+      padding: 2px;
+      border: 1px solid #f2eded;
+      /* border: 1px solid #c4bcbc; */
+      outline:none;
+      border-radius: 5px;
+      margin-bottom: 1px;
+    }
+
+    .form-input1 {
+      width: 5%;
+      padding: 1px;
+      border: 1px solid #f2eded;
+      /* border: 1px solid #c4bcbc; */
+      outline:none;
+      border-radius: 5px;
+      margin-bottom: 1px;
+    }
+  
+    .form-textarea {
+      height: 100px;
+    }
+  
+    .form-submit {
+      margin-top: 20px; /* Adjusted margin-top */
+      margin-bottom: 20px; /* Added margin-bottom */
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+   
+   @media screen and (min-width:100%) {
+     body {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+} 
+  
+    .form-fields + .form-fields {
+      margin-left: 20px;
+    }
+
+    .side-heading {
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    #b1 a{
+            position: relative;
+            left: 48%;
+            text-decoration: none;
+            border: 2px double rgb(100, 97, 97);
+            border-radius: 3px;
+            padding-left: 9px;
+            padding-right: 9px;
+   }
+
+   #b1 #b2{
+        position: relative;
+            left: 48%;
+            text-decoration: none;
+            border: 2px double rgb(100, 97, 97);
+            border-radius: 3px;
+            padding-left: 9px;
+            padding-right: 9px;
+         } 
+
+  </style>
+  
+  <body>
+    <div class="container">
+      
+     
+  <form action="" [formGroup]="formData" (ngSubmit)="onSubmit()">
+
+    <!-- <div>
+      <label for="addictName">Addict Name:</label>
+      <input type="text" id="addictName" formControlName="addictName" />
+      <button (click)="fetchDataByAddictName()">Fetch Data</button>
+    </div> -->
+    <h1><b>PHYSICAL EXAMINATION ON THE DAY OF ADMISSION</b></h1><br>
+               <!--<label>Name:</label>
+              <input type="text" name="addictname" id="name"   style="width: 10%" formControlName="addictname">&nbsp;-->
+                <label>Pulse Rate:</label>
+              <input type="text" name="t1" id="t1"   style="width: 10%" formControlName="t1">&nbsp;
+
+              <label>Blood Pressure:</label>
+              <input type="text" name="t2" id="t2"   style="width: 10%" formControlName="t2">&nbsp;
+
+              <label>Temperature:</label>
+              <input type="text" name="t3" id="t3"   style="width: 10%" formControlName="t3">&nbsp;
+
+<label>Weight:</label>
+              <input type="text" name="t4" id="t4"   style="width: 10%" formControlName="t4">&nbsp;
+
+<h3>Which of the following symptoms are present during admissions:</h3>
+<tr>
+<td><li>&nbsp;<label>Anemia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t5" formControlName="t5" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></li></td>
+<td><li><label>Jaundice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t6" formControlName="t6" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></li></td>
+<td><li><label>Malnutrition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t7" formControlName="t7" value="yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></li></td>
+</tr>
+<tr>
+<td><li><label>Lymph Nodes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t8" formControlName="t8"><br></li></td>
+<td><li><label>Loss of body hair &nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t9" formControlName="t9"><br></li></td>
+<li><label>Clubbing of nails &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t10" formControlName="t10"><br></li>
+</tr>
+<tr>
+<td><li><label>Glossitis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t11" formControlName="t11"><br></li></td>
+<td><li><label>Wasting of muscles&nbsp;&nbsp;</label><input type="checkbox" id="t12" formControlName="t12"><br></li></td>
+<td><li><label>Spider naevi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t13" formControlName="t13"><br></li></td>
+</tr>
+<tr>
+<td><li><label>Flushed face&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t14" formControlName="t14"><br></li></td>
+<td><li><label>Abscess&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t15" formControlName="t15"><br></li></td>
+<td><li><label>Gynaecomastia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t16" formControlName="t16"><br></li></td>
+</tr>
+<tr>
+<td><li><label>Palmar erythema&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t17" formControlName="t17"><br></li></td>
+<td><li><label>Hallucination&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t18" formControlName="t18"><br></li></td>
+<td><li><label>Injection Marks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="checkbox" id="t19" formControlName="t19"><br></li></td>
+</tr>
+<!-- <label>Clubbing of nails</label><input type="checkbox" id="club" formControlName="club"><br>
+<label>Spider naevi</label><input type="checkbox" id="spd" formControlName="spd"><br>
+<label>Gynaecomastia</label><input type="checkbox" id="gynae" formControlName="gynae"><br>
+<label>Injection Marks</label><input type="checkbox" id="inj" formControlName="inj"><br> -->
+<tr>
+<td><li>Pedal Edema&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="t20" formControlName="t20"></li></td>
+</tr>
+<td><li>Tremors&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="t21" formControlName="t21"></li></td>
+
+<h3>Record abnormailities, if any, on examination of the following:</h3>
+<!-- <label>System:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>No</label><br>
+<label>Respiratory system:</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio1" value="yes" id="radio1"  formControlName="radio1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="no1" value="no" id="no1"  formControlName="no1">
+<br>
+<label>Cardio vascular system</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio2" value="yes" id="radio2"  formControlName="radio2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="no2" value="no" id="no2"  formControlName="no2"><br>
+<label>Gastro Intestinal system</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio3" value="yes" id="radio3" formControlName="radio3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="no3" value="no" id="no3" formControlName="no3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<label>Nervous system</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="radio4" value="yes" id="radio4" formControlName="radio4" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="no4" value="no" id="no4" formControlName="no4" ><br> -->
+<!--<b>Record abnormalities, if any,on examination of the following:</b>-->
+<table class="newtb">
+<tr>
+<th class="newth">System</th>
+<th class="newth">YES</th>
+<th class="newth">NO</th>
+</tr>
+<tr>
+<td class="newtd"> Respiratory system:</td>
+<td class="newtd"><input type="checkbox" id="t22" formControlName="t22" style="width:20px; border:none;" > </td>
+<td class="newtd"><input type="checkbox" id="t23" formControlName="t23" style="width:20px; border:none;" >  </td>
+</tr>
+<tr>
+<tr>
+    <td class="newtd"> Cardio vascular system:</td>
+    <td class="newtd"><input type="checkbox" id="t24" formControlName="t24" style="width:20px; border:none;" > </td>
+    <td class="newtd"><input type="checkbox" id="t25" formControlName="t25" style="width:20px; border:none;" >  </td>
+</tr>
+<tr>
+  <td class="newtd"> Gastro intestinal system:</td>
+  <td class="newtd"><input type="checkbox" id="t26" formControlName="t26" style="width:20px; border:none;" > </td>
+  <td class="newtd"><input type="checkbox" id="t27" formControlName="t27" style="width:20px; border:none;" >  </td>
+</tr>
+<tr>
+  <td class="newtd"> Nervous system:</td>
+  <td class="newtd"><input type="checkbox" id="t28" formControlName="t28" style="width:20px; border:none;" > </td>
+  <td class="newtd"><input type="checkbox" id="t29" formControlName="t29" style="width:20px; border:none;" >  </td>
+</tr>
+</table><br>
+<h3>Any untoward incident occurred during treatment:</h3>&nbsp;<input type="text" name="t30" id="t30"   style="width: 30%" formControlName="t30">&nbsp;<label>Yes/No</label><br>
+<br>
+<table>
+<tr>
+<td>If yes, describe the incident:<input type="text" name="t31" id="t31"   style="width: 100%; border:none;" formControlName="t31"></td>
+</tr><br>
+<tr>
+  <td>Action taken:<input type="text" name="t32" id="t32"   style="width: 100%; border:none;" formControlName="t32"></td>
+</tr><br>
+<tr>
+  <td>Impression of counsellor:<input type="text" name="t33" id="t33"   style="width: 100%; border:none;" formControlName="t33"></td>
+</tr><br>
+<label>Denial</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Mild</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Moderate</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Severe</label>
+<br><br>
+<tr>
+<td><b>Investigation:</b><input type="text" name="t34" id="t34"   style="width: 100%; border:none;" formControlName="t34"></td>
+</tr><br>
+</table>
+<tr>
+  <td>Certificate issued (Details):<input type="text" name="t35" id="t35"   style="width: 100%; border:none;" formControlName="t35"></td>
+</tr>
+<br><br>
+<button type="submit" [disabled]="!formData.valid">Save</button>
+<div id="b1">
+  <a routerLink="../ninth" style="text-decoration: none; color:black; background-color: rgb(255, 252, 252);display: inline-block; vertical-align: top;"><b>P</b></a> 
+   <b id="b2" style="text-decoration: none; color:black; background-color: rgb(243, 237, 237);display: inline-block; vertical-align: top;">10</b>
+  <a routerLink="../eleventh" style="text-decoration: none; color:black; background-color: rgb(255, 252, 252); display: inline-block; vertical-align: top;"><b>N</b></a> 
+</div>
+  </form>
+    </div>
+  </body>
+  
